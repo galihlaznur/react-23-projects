@@ -1,0 +1,14 @@
+.starrating {
+  display: flex;
+  gap: 6px;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.active {
+  color: #fff700;
+}
+
+.inactive {
+  color: #000000;
+}
