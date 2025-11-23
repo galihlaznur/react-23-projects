@@ -9,6 +9,7 @@ import TreeView from "./components/tree-view/TreeView";
 import menus from "./components/tree-view/data";
 import QrCodeGenerator from "./components/qr-code-generator/QrCodeGenerator";
 import LightDarkMode from "./components/light-dark-mode/LightDarkMode";
+import ScrollIndicator from "./components/scroll-indicator/ScrollIndicator";
 
 function App() {
   const navigate = useNavigate();
@@ -23,13 +24,14 @@ function App() {
       <nav>
         <select onChange={handleSelectChange}>
           <option value="/">Accordion</option>
-          <option value="/color-generator">ColorGenerator</option>
-          <option value="/star-rating">StarRating</option>
-          <option value="/image-slider">ImageSlider</option>
-          <option value="/load-more-data">LoadMoreData</option>
-          <option value="/tree-view">TreeView</option>
-          <option value="/qr-code-generator">QrCodeGenerator</option>
-          <option value="/light-dark-mode">LightDarkMode</option>
+          <option value="/color-generator">Color Generator</option>
+          <option value="/star-rating">Star Rating</option>
+          <option value="/image-slider">Image Slider</option>
+          <option value="/load-more-data">Load More Data</option>
+          <option value="/tree-view">Tree View</option>
+          <option value="/qr-code-generator">QR Code Generator</option>
+          <option value="/light-dark-mode">Light Dark Mode</option>
+          <option value="/scroll-indicator">Scroll Indicator</option>
         </select>
       </nav>
 
@@ -51,6 +53,12 @@ function App() {
         <Route path="/tree-view" element={<TreeView menus={menus} />} />
         <Route path="/qr-code-generator" element={<QrCodeGenerator />} />
         <Route path="/light-dark-mode" element={<LightDarkMode />} />
+        <Route
+          path="/scroll-indicator"
+          element={
+            <ScrollIndicator url={"https://dummyjson.com/products?limit=100"} />
+          }
+        />
       </Routes>
     </>
   );
