@@ -10,6 +10,7 @@ import menus from "./components/tree-view/data";
 import QrCodeGenerator from "./components/qr-code-generator/QrCodeGenerator";
 import LightDarkMode from "./components/light-dark-mode/LightDarkMode";
 import ScrollIndicator from "./components/scroll-indicator/ScrollIndicator";
+import TabTest from "./components/custom-tabs/TabTest";
 
 function App() {
   const navigate = useNavigate();
@@ -32,6 +33,7 @@ function App() {
           <option value="/qr-code-generator">QR Code Generator</option>
           <option value="/light-dark-mode">Light Dark Mode</option>
           <option value="/scroll-indicator">Scroll Indicator</option>
+          <option value="/custom-tabs">Custom Tabs</option>
         </select>
       </nav>
 
@@ -59,6 +61,7 @@ function App() {
             <ScrollIndicator url={"https://dummyjson.com/products?limit=100"} />
           }
         />
+        <Route path="/custom-tabs" element={<TabTest />} />
       </Routes>
     </>
   );
