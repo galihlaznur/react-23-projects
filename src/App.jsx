@@ -8,6 +8,7 @@ import LoadMoreData from "./components/load-more-data/LoadMoreData";
 import TreeView from "./components/tree-view/TreeView";
 import menus from "./components/tree-view/data";
 import QrCodeGenerator from "./components/qr-code-generator/QrCodeGenerator";
+import LightDarkMode from "./components/light-dark-mode/LightDarkMode";
 
 function App() {
   const navigate = useNavigate();
@@ -28,6 +29,7 @@ function App() {
           <option value="/load-more-data">LoadMoreData</option>
           <option value="/tree-view">TreeView</option>
           <option value="/qr-code-generator">QrCodeGenerator</option>
+          <option value="/light-dark-mode">LightDarkMode</option>
         </select>
       </nav>
 
@@ -48,6 +50,7 @@ function App() {
         <Route path="/load-more-data" element={<LoadMoreData />} />
         <Route path="/tree-view" element={<TreeView menus={menus} />} />
         <Route path="/qr-code-generator" element={<QrCodeGenerator />} />
+        <Route path="/light-dark-mode" element={<LightDarkMode />} />
       </Routes>
     </>
   );
