@@ -14,6 +14,7 @@ import TabTest from "./components/custom-tabs/TabTest";
 import ModalTest from "./components/custom-modal-popup/ModalTest";
 import GithubProfileFinder from "./components/github-profile-finder/GithubProfileFinder";
 import SearchAutocomplete from "./components/search-autocomplete-with-api/SearchAutocomplete";
+import TicTacToe from "./components/tic-tac-toe/TicTacToe";
 
 function App() {
   const navigate = useNavigate();
@@ -42,6 +43,7 @@ function App() {
           <option value="/search-autocomplete-with-api">
             Search Autocomplete With API
           </option>
+          <option value="/tic-tac-toe">Tic Tac Toe</option>
         </select>
       </nav>
 
@@ -79,6 +81,7 @@ function App() {
           path="/search-autocomplete-with-api"
           element={<SearchAutocomplete />}
         />
+        <Route path="/tic-tac-toe" element={<TicTacToe />} />
       </Routes>
     </>
   );
