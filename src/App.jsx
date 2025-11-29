@@ -13,6 +13,7 @@ import ScrollIndicator from "./components/scroll-indicator/ScrollIndicator";
 import TabTest from "./components/custom-tabs/TabTest";
 import ModalTest from "./components/custom-modal-popup/ModalTest";
 import GithubProfileFinder from "./components/github-profile-finder/GithubProfileFinder";
+import SearchAutocomplete from "./components/search-autocomplete-with-api/SearchAutocomplete";
 
 function App() {
   const navigate = useNavigate();
@@ -38,6 +39,9 @@ function App() {
           <option value="/custom-tabs">Custom Tabs</option>
           <option value="/custom-modal-popup">Custom Modal Popup</option>
           <option value="/github-profile-finder">Github Profile Finder</option>
+          <option value="/search-autocomplete-with-api">
+            Search Autocomplete With API
+          </option>
         </select>
       </nav>
 
@@ -70,6 +74,10 @@ function App() {
         <Route
           path="/github-profile-finder"
           element={<GithubProfileFinder />}
+        />
+        <Route
+          path="/search-autocomplete-with-api"
+          element={<SearchAutocomplete />}
         />
       </Routes>
     </>
