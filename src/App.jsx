@@ -15,6 +15,8 @@ import ModalTest from "./components/custom-modal-popup/ModalTest";
 import GithubProfileFinder from "./components/github-profile-finder/GithubProfileFinder";
 import SearchAutocomplete from "./components/search-autocomplete-with-api/SearchAutocomplete";
 import TicTacToe from "./components/tic-tac-toe/TicTacToe";
+import FeatureFlag from "./components/feature-flag/FeatureFlag";
+import FeatureFlagProvider from "./components/feature-flag/context/FeatureFlagsProvider";
 
 function App() {
   const navigate = useNavigate();
@@ -44,6 +46,7 @@ function App() {
             Search Autocomplete With API
           </option>
           <option value="/tic-tac-toe">Tic Tac Toe</option>
+          <option value="/feature-flag">Feature Flag</option>
         </select>
       </nav>
 
@@ -82,6 +85,14 @@ function App() {
           element={<SearchAutocomplete />}
         />
         <Route path="/tic-tac-toe" element={<TicTacToe />} />
+        <Route
+          path="/feature-flag"
+          element={
+            <FeatureFlagProvider>
+              <FeatureFlag />
+            </FeatureFlagProvider>
+          }
+        ></Route>
       </Routes>
     </>
   );
