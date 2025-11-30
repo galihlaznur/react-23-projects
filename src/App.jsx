@@ -19,6 +19,7 @@ import FeatureFlag from "./components/feature-flag/FeatureFlag";
 import FeatureFlagsProvider from "./components/feature-flag/context/FeatureFlagsProvider";
 import UseFetchHookTest from "./components/use-fetch/UseFetchHookTest";
 import UseOutsideClickHookTest from "./components/use-outside-click/UseOutsideClickHookTest";
+import UseWindowResizeHookTest from "./components/use-window-resize/UseWindowResizeHookTest";
 
 function App() {
   const navigate = useNavigate();
@@ -51,6 +52,7 @@ function App() {
           <option value="/feature-flag">Feature Flag</option>
           <option value="/use-fetch">Use Fetch</option>
           <option value="/use-outside-click">Use Outside Click</option>
+          <option value="/use-window-resize">Use Window Resize</option>
         </select>
       </nav>
 
@@ -101,6 +103,10 @@ function App() {
         <Route
           path="/use-outside-click"
           element={<UseOutsideClickHookTest />}
+        />
+        <Route
+          path="/use-window-resize"
+          element={<UseWindowResizeHookTest />}
         />
       </Routes>
     </>

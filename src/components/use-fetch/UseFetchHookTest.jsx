@@ -1,5 +1,5 @@
 import React from "react";
-import useFetch from "./UseFetch";
+import useFetch from "./useFetch";
 
 const UseFetchHookTest = () => {
   const [data, pending, error] = useFetch("https://dummyjson.com/products", {});
