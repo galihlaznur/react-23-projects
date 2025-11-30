@@ -21,6 +21,7 @@ import UseFetchHookTest from "./components/use-fetch/UseFetchHookTest";
 import UseOutsideClickHookTest from "./components/use-outside-click/UseOutsideClickHookTest";
 import UseWindowResizeHookTest from "./components/use-window-resize/UseWindowResizeHookTest";
 import ScrollToTopBottom from "./components/scroll-to-top-bottom/ScrollToTopBottom";
+import ScrollToSection from "./components/scroll-to-section/ScrollToSection";
 
 function App() {
   const navigate = useNavigate();
@@ -55,6 +56,7 @@ function App() {
           <option value="/use-outside-click">Use Outside Click</option>
           <option value="/use-window-resize">Use Window Resize</option>
           <option value="/scroll-to-top-bottom">Scroll To Top/Bottom</option>
+          <option value="/scroll-to-section">Scroll To Section</option>
         </select>
       </nav>
 
@@ -111,6 +113,7 @@ function App() {
           element={<UseWindowResizeHookTest />}
         />
         <Route path="/scroll-to-top-bottom" element={<ScrollToTopBottom />} />
+        <Route path="/scroll-to-section" element={<ScrollToSection />} />
       </Routes>
     </>
   );
