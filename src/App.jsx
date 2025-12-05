@@ -23,6 +23,11 @@ import UseWindowResizeHookTest from "./components/use-window-resize/UseWindowRes
 import ScrollToTopBottom from "./components/scroll-to-top-bottom/ScrollToTopBottom";
 import ScrollToSection from "./components/scroll-to-section/ScrollToSection";
 import Weather from "./components/[21]-weather-app/Weather";
+import FoodRecipeLayout from "./components/[22]-food-recipe-app/FoodRecipeLayout";
+import Home from "./components/[22]-food-recipe-app/pages/Home";
+import Favorites from "./components/[22]-food-recipe-app/pages/Favorites";
+import Details from "./components/[22]-food-recipe-app/pages/Details";
+import FoodRecipeProvider from "./components/[22]-food-recipe-app/context/FoodRecipeProvider";
 
 function App() {
   const navigate = useNavigate();
@@ -35,7 +40,10 @@ function App() {
   return (
     <>
       <nav>
-        <select onChange={handleSelectChange}>
+        <select
+          className="bg-indigo-100 text-indigo-800 border border-indigo-400 p-2 rounded-md"
+          onChange={handleSelectChange}
+        >
           <option value="/">Accordion</option>
           <option value="/color-generator">Color Generator</option>
           <option value="/star-rating">Star Rating</option>
@@ -59,6 +67,7 @@ function App() {
           <option value="/scroll-to-top-bottom">Scroll To Top/Bottom</option>
           <option value="/scroll-to-section">Scroll To Section</option>
           <option value="/weather-app">Weather App</option>
+          <option value="/food-recipe">Food Recipe</option>
         </select>
       </nav>
 
@@ -117,6 +126,18 @@ function App() {
         <Route path="/scroll-to-top-bottom" element={<ScrollToTopBottom />} />
         <Route path="/scroll-to-section" element={<ScrollToSection />} />
         <Route path="/weather-app" element={<Weather />} />
+        <Route
+          path="/food-recipe"
+          element={
+            <FoodRecipeProvider>
+              <FoodRecipeLayout />
+            </FoodRecipeProvider>
+          }
+        >
+          <Route index element={<Home />} />
+          <Route path="favorites" element={<Favorites />} />
+          <Route path="recipe-item/:id" element={<Details />} />
+        </Route>
       </Routes>
     </>
   );
