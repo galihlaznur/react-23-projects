@@ -24,10 +24,15 @@ import ScrollToTopBottom from "./components/scroll-to-top-bottom/ScrollToTopBott
 import ScrollToSection from "./components/scroll-to-section/ScrollToSection";
 import Weather from "./components/[21]-weather-app/Weather";
 import FoodRecipeLayout from "./components/[22]-food-recipe-app/FoodRecipeLayout";
-import Home from "./components/[22]-food-recipe-app/pages/Home";
+import HomeFoodRecipe from "./components/[22]-food-recipe-app/pages/Home";
 import Favorites from "./components/[22]-food-recipe-app/pages/Favorites";
 import Details from "./components/[22]-food-recipe-app/pages/Details";
 import FoodRecipeProvider from "./components/[22]-food-recipe-app/context/FoodRecipeProvider";
+import ShoppingCartLayout from "./components/[23]-shopping-cart-app/ShoppingCartLayout";
+import HomeShoppingCart from "./components/[23]-shopping-cart-app/pages/Home";
+import Cart from "./components/[23]-shopping-cart-app/pages/Cart";
+import { Provider } from "react-redux";
+import store from "./components/[23]-shopping-cart-app/store";
 
 function App() {
   const navigate = useNavigate();
@@ -68,6 +73,7 @@ function App() {
           <option value="/scroll-to-section">Scroll To Section</option>
           <option value="/weather-app">Weather App</option>
           <option value="/food-recipe">Food Recipe</option>
+          <option value="/shopping-cart">Shopping Cart</option>
         </select>
       </nav>
 
@@ -134,9 +140,20 @@ function App() {
             </FoodRecipeProvider>
           }
         >
-          <Route index element={<Home />} />
+          <Route index element={<HomeFoodRecipe />} />
           <Route path="favorites" element={<Favorites />} />
           <Route path="recipe-item/:id" element={<Details />} />
+        </Route>
+        <Route
+          path="shopping-cart"
+          element={
+            <Provider store={store}>
+              <ShoppingCartLayout />
+            </Provider>
+          }
+        >
+          <Route index element={<HomeShoppingCart />} />
+          <Route path="cart" element={<Cart />} />
         </Route>
       </Routes>
     </>
