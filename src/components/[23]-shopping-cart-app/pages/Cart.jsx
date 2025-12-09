@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import ProductTile from "../components/ProductTile";
 
 const Cart = () => {
-  const { cart } = useSelector((state) => state);
+  const cart = useSelector((state) => state.cart);
   const totalCart = cart.reduce((acc, curr) => acc + curr.price, 0);
 
   return (

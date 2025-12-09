@@ -4,7 +4,7 @@ import { addToCart, removeFromCart } from "../store/slices/cart-slice";
 
 const ProductTile = ({ product }) => {
   const dispatch = useDispatch();
-  const { cart } = useSelector((state) => state);
+  const cart = useSelector((state) => state.cart);
 
   const handleAddToCart = () => {
     dispatch(addToCart(product));

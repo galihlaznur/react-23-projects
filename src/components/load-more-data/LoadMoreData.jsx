@@ -24,7 +24,6 @@ const LoadMoreData = () => {
           // data?.products?.length nulisnya bisa gini juga buat kondisinya
           setProducts((prevProducts) => [...prevProducts, ...data.products]);
         }
-        console.log(data);
       } catch (error) {
         console.error("Error fetching products:", error);
         setProducts([]);
@@ -50,8 +49,8 @@ const LoadMoreData = () => {
     <div className={style["load-more-container"]}>
       <div className={style["product-container"]}>
         {products && products.length ? (
-          products.map((product) => (
-            <div key={product.id} className={style.product}>
+          products.map((product, index) => (
+            <div key={index} className={style.product}>
               <img src={product.images[0]} alt={product.title} />
               <h3>{product.title}</h3>
               <p>{product.description}</p>
