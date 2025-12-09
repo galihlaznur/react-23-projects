@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { FaStar } from "react-icons/fa";
-import style from "./StarRating.module.css";
+import style from "./starrating.module.css";
 
 const StarRating = ({ noOfStars = 5 }) => {
   const [rating, setRating] = useState(0);
